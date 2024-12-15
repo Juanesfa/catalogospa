@@ -1,0 +1,36 @@
+.detail-product {
+  display: flex; /* Organiza los elementos en fila */
+  align-items: flex-start; /* Alinea verticalmente los elementos al inicio */
+  gap: 20px; /* Añade espacio entre los detalles y la imagen */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #e6f7ff;
+  font-family: 'Verdana', sans-serif;
+}
+
+.item-product {
+  flex: 1; /* Los detalles ocupan el espacio restante */
+}
+
+.detail-product img {
+  width: 300px; /* Establece un tamaño consistente para la imagen */
+  height: 300px;
+  object-fit: cover; /* Asegura que la imagen no se deforme */
+  border-radius: 8px; /* Coincide con el diseño del contenedor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #b3cde0;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px; /* Añade separación con el resto del contenido */
+}
+
+button:hover {
+  background-color: #6497b1;
+}

@@ -1,0 +1,38 @@
+.item-product {
+  display: flex; /* Organiza los detalles y la imagen en una fila */
+  align-items: center; /* Alinea verticalmente los elementos */
+  justify-content: space-between; /* Distribuye espacio entre los elementos */
+  gap: 20px; /* Añade espacio entre los detalles y la imagen */
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 8px;
+  border-radius: 8px;
+  background-color: #f8f0fc;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.item-product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 200px; /* Tamaño consistente para la imagen */
+  height: 200px;
+  object-fit: cover; /* Evita distorsiones */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.description {
+  flex: 1; /* Permite que los detalles ocupen el espacio disponible */
+  color: #4a4a4a;
+  font-family: 'Arial', sans-serif;
+}
+
+#id {
+  font-size: 0.9em;
+  color: #7d7d7d;
+}

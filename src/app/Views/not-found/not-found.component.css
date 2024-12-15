@@ -1,0 +1,46 @@
+.detail-book {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 450px;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+.item-book {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+button {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #ff758c, #ff9a9e);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #ff512f, #ff758c);
+}

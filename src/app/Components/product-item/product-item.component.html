@@ -1,0 +1,10 @@
+<section class="item-product" (click)="navigateToID()">
+    <img [src]="item.image" alt="Imagen de {{item.name}}" class="product-image">
+    <p id="id">ID: {{item.id}}</p>
+    <div class="description">
+        <h2>Nombre: {{item.name}}</h2>
+        <p>Precio: ${{item.price}}</p>
+        <p>Detalles: {{item.details}}</p>
+        <p><i>Más detalles estarán disponibles en el futuro.</i></p>
+    </div>
+</section>
