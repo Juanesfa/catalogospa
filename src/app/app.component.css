@@ -1,9 +1,19 @@
 .app-title {
     text-align: center; /* Centra el texto */
-    font-size: 2.5em; /* Tamaño de fuente grande */
+    font-size: 3em; /* Tamaño de fuente grande */
     font-family: 'Arial', sans-serif; /* Fuente */
     color: #4a4a4a; /* Color del texto */
     margin-top: 20px; /* Espaciado arriba del título */
     margin-bottom: 20px; /* Espaciado abajo del título */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra para darle un efecto llamativo */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para darle un efecto llamativo */
+    background: linear-gradient(135deg, #9beff5, #6bfafa); /* Fondo degradado */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+}
+app-root {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    background-color: #f4f4f4; /* Color de fondo general */
 }

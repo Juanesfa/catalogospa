@@ -3,24 +3,25 @@
   align-items: center; /* Alinea verticalmente los elementos */
   justify-content: space-between; /* Distribuye espacio entre los elementos */
   gap: 20px; /* Añade espacio entre los detalles y la imagen */
-  border: 1px solid #ccc;
-  padding: 16px;
-  margin: 8px;
-  border-radius: 8px;
-  background-color: #f8f0fc;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
+  border: 1px solid #ccc; /* Borde alrededor del producto */
+  padding: 16px; /* Espaciado interno */
+  margin: 8px; /* Espaciado entre productos */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #f8f0fc; /* Color de fondo */
+  transition: transform 0.3s, box-shadow 0.3s; /* Efecto de transición */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el producto */
   text-align: left; /* Alinea el texto a la izquierda */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
 .item-product:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el mouse */
 }
 
 .product-image {
   width: 100px; /* Tamaño consistente para la imagen */
-  height: 100px;
+  height: 100px; /* Altura de la imagen */
   object-fit: cover; /* Evita distorsiones */
   border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
@@ -28,11 +29,11 @@
 
 .description {
   flex: 1; /* Permite que los detalles ocupen el espacio disponible */
-  color: #4a4a4a;
-  font-family: 'Arial', sans-serif;
+  color: #4a4a4a; /* Color del texto */
+  font-family: 'Arial', sans-serif; /* Fuente */
 }
 
 #id {
-  font-size: 0.9em;
-  color: #7d7d7d;
+  font-size: 0.9em; /* Tamaño de fuente más pequeño */
+  color: #7d7d7d; /* Color gris para el ID */
 }

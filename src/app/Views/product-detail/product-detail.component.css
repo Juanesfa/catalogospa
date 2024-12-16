@@ -1,16 +1,17 @@
 .detail-product {
   display: flex; /* Organiza los elementos en fila */
-  align-items: flex-start; /* Alinea verticalmente los elementos al inicio */
+  flex-direction: column; /* Cambia la dirección a columna para centrar verticalmente */
+  align-items: center; /* Centra horizontalmente los elementos */
+  justify-content: center; /* Centra verticalmente los elementos */
   gap: 20px; /* Añade espacio entre los detalles y la imagen */
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #e6f7ff;
-  font-family: 'Verdana', sans-serif;
-}
-
-.item-product {
-  flex: 1; /* Los detalles ocupan el espacio restante */
+  border: 1px solid #ccc; /* Borde alrededor del cuadro */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #f0f8ff; /* Color de fondo suave */
+  font-family: 'Verdana', sans-serif; /* Fuente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  max-width: 600px; /* Ancho máximo del cuadro */
+  margin: auto; /* Centra el cuadro en la página */
 }
 
 .detail-product img {
@@ -21,16 +22,21 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
 }
 
+.item-product {
+  text-align: center; /* Centra el texto dentro del cuadro */
+}
+
 button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #b3cde0;
+  background-color: #4CAF50; /* Color verde */
   color: white;
   cursor: pointer;
   margin-top: 20px; /* Añade separación con el resto del contenido */
+  transition: background-color 0.3s; /* Transición suave */
 }
 
 button:hover {
-  background-color: #6497b1;
+  background-color: #45a049; /* Color verde más oscuro al pasar el mouse */
 }

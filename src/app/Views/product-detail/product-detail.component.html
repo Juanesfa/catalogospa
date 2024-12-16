@@ -1,12 +1,9 @@
-<div class="detail-product"> 
-    <section class="item-product">
-      <p id="id">ID: {{productSelected.id}}</p>
+<div class="detail-product">
+  <img [src]="productSelected.image" alt="Imagen de {{productSelected.name}}" class="product-image">
+  <div class="item-product">
       <h2>Nombre: {{productSelected.name}}</h2>
       <p>Precio: ${{productSelected.price}}</p>
       <p>Detalles: {{productSelected.details}}</p>
-      <p><i>Más detalles estarán disponibles en el futuro.</i></p>
       <button (click)="gotoHome()">Regresar</button>
-    </section>
-    <img [src]="productSelected.image" alt="Imagen de {{productSelected.name}}">
   </div>
-  
+</div>
