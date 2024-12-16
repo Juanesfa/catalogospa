@@ -1,3 +1,4 @@
+/* src/app/Components/product-item/product-item.component.css */
 .item-product {
   display: flex; /* Organiza los detalles y la imagen en una fila */
   align-items: center; /* Alinea verticalmente los elementos */

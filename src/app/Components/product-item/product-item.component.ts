@@ -1,3 +1,4 @@
+// src/app/Components/product-item/product-item.component.ts
 import { Component, inject, Input } from '@angular/core';
 import { IProduct } from '../../Models/product.=mode';
 import { Router } from '@angular/router';

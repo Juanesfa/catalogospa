@@ -1,3 +1,4 @@
+// src/app/Views/not-found/not-found.component.ts
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 

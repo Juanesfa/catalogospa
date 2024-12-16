@@ -1,3 +1,4 @@
+// src/app/Views/products-list/products-list.component.ts
 import { Component, inject } from '@angular/core';
 import { IProduct } from '../../Models/product.=mode';
 import { ProductService } from '../../Services/product.service';

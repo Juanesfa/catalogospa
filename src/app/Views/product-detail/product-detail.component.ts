@@ -1,3 +1,4 @@
+// src/app/Views/product-detail/product-detail.component.ts
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../Services/product.service';
