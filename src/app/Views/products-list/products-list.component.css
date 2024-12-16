@@ -1,0 +1,19 @@
+.list-products {
+    display: grid; /* Usamos grid para organizar los productos */
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual tamaño */
+    gap: 20px; /* Espacio entre los productos */
+    padding: 20px; /* Espacio alrededor de la lista */
+}
+
+.item {
+    border: 1px solid #ccc; /* Borde alrededor de cada producto */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f8f0fc; /* Color de fondo */
+    padding: 10px; /* Espacio interno */
+    transition: transform 0.3s, box-shadow 0.3s; /* Efecto de transición */
+}
+
+.item:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra al pasar el mouse */
+}

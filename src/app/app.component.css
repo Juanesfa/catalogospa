@@ -1,0 +1,9 @@
+.app-title {
+    text-align: center; /* Centra el texto */
+    font-size: 2.5em; /* Tamaño de fuente grande */
+    font-family: 'Arial', sans-serif; /* Fuente */
+    color: #4a4a4a; /* Color del texto */
+    margin-top: 20px; /* Espaciado arriba del título */
+    margin-bottom: 20px; /* Espaciado abajo del título */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra para darle un efecto llamativo */
+}
