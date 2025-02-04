@@ -1,6 +1,8 @@
 <!-- src/app/Views/products-list/products-list.component.html -->
-<section class="list-products">
-    <div class="item" *ngFor="let item of listaProductos">
-        <app-product-item [item]="item"></app-product-item>
-    </div>
-</section>
+<ion-content class="ion-padding">
+  <ion-list class="list-products">
+    <ion-item *ngFor="let item of listaProductos" class="product-item">
+      <app-product-item [item]="item"></app-product-item>
+    </ion-item>
+  </ion-list>
+</ion-content>

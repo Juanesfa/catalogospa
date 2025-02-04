@@ -1,10 +1,20 @@
-<!-- src/app/Views/product-detail/product-detail.component.html -->
-<div class="detail-product">
-  <img [src]="productSelected.image" alt="Imagen de {{productSelected.name}}" class="product-image">
-  <div class="item-product">
-      <h2>Nombre: {{productSelected.name}}</h2>
-      <p>Precio: ${{productSelected.price}}</p>
-      <p>Detalles: {{productSelected.details}}</p>
-      <button (click)="gotoHome()">Regresar</button>
+<!-- src/app/views/product-detail/product-detail.component.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalle del Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="detail-product">
+    <ion-card>
+      <img [src]="productSelected.image" alt="Imagen de {{productSelected.name}}" class="product-image">
+      <ion-card-content>
+        <ion-card-title>Nombre: {{productSelected.name}}</ion-card-title>
+        <p>Precio: ${{productSelected.price}}</p>
+        <p>Detalles: {{productSelected.details}}</p>
+        <ion-button expand="block" (click)="gotoHome()">Regresar</ion-button>
+      </ion-card-content>
+    </ion-card>
   </div>
-</div>
+</ion-content>

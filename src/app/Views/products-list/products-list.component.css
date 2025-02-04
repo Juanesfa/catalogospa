@@ -1,21 +1,73 @@
+/* src/app/Views/products-list/products-list.component.css */
+
+/* Estilos para la lista de productos */
 .list-products {
     display: grid; /* Usamos grid para organizar los productos */
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual tamaño */
-    gap: 20px; /* Espacio entre los productos */
-    padding: 20px; /* Espacio alrededor de la lista */
-    background-color: #e6f7ff; /* Color de fondo suave */
-}
-
-.item {
-    border: 1px solid #ccc; /* Borde alrededor de cada producto */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adaptable al tamaño de la pantalla */
+    gap: 20px; /* Espaciado entre productos */
+    padding: 20px; /* Espaciado interno del contenedor */
+    background: var(--ion-background-color, #e6f7ff); /* Fondo adaptable al tema */
+    align-items: center; /* Centra verticalmente los items */
+    justify-items: center; /* Centra horizontalmente la lista */
+    margin: 0 auto; /* Centra la lista en el contenedor */
+  }
+  
+  /* Estilos para cada item de producto */
+  .product-item {
+    display: flex;
+    flex-direction: column; /* Los elementos del producto se apilan verticalmente */
+    align-items: center; /* Centra los elementos en cada item */
+    justify-content: space-between; /* Distribuye espacio entre los elementos */
+    border: 1px solid var(--ion-color-medium, #ccc); /* Borde adaptado al tema */
     border-radius: 8px; /* Bordes redondeados */
-    background-color: #f8f0fc; /* Color de fondo */
-    padding: 10px; /* Espacio interno */
-    transition: transform 0.3s, box-shadow 0.3s; /* Efecto de transición */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-}
-
-.item:hover {
-    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el mouse */
-}
+    background-color: var(--ion-color-light, #f8f0fc); /* Fondo adaptable */
+    padding: 15px; /* Espaciado interno */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transición para hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+    text-align: center; /* Centra el contenido de cada producto */
+    width: 100%; /* Asegura que ocupe el ancho completo disponible */
+  }
+  
+  .product-item:hover {
+    transform: translateY(-5px); /* Efecto de elevación en hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa en hover */
+  }
+  
+  /* Mejora de presentación de imágenes */
+  .product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordes redondeados en las imágenes */
+  }
+  
+  /* Estilo para los textos (nombre y precio) */
+  .product-item h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--ion-text-color, #333);
+    margin-top: 10px;
+  }
+  
+  .product-item p {
+    font-size: 1rem;
+    color: var(--ion-text-color, #555);
+    margin-top: 5px;
+  }
+  
+  /* Para asegurar que el ion-list ocupe todo el ancho disponible */
+  ion-list {
+    width: 100%;
+  }
+  
+  /* Estilo para los items en la lista */
+  ion-item {
+    --background: transparent; /* Fondo transparente para los items de la lista */
+    --border-radius: 8px;
+    padding: 0;
+  }
+  
+  /* Fondo del contenido */
+  ion-content {
+    --ion-background-color: var(--ion-color-light, #e6f7ff); /* Fondo del contenido */
+  }
+       

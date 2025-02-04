@@ -1,21 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
-body {
-    background-color: #f4f4f4; /* Color de fondo general */
-    font-family: 'Arial', sans-serif; /* Fuente general */
-    color: #333; /* Color de texto general */
-    margin: 0; /* Elimina márgenes por defecto */
-    padding: 0; /* Elimina padding por defecto */
-}
+/* src/app/app.component.css */
 
-h1, h2, h3 {
-    color: #2c3e50; /* Color de los encabezados */
-}
-
-a {
-    color: #3498db; /* Color de los enlaces */
-    text-decoration: none; /* Sin subrayado */
-}
-
-a:hover {
-    text-decoration: underline; /* Subrayado al pasar el mouse */
-}
+/* Fondo general */
+ion-content {
+    background: #f4f4f4;  /* Fondo blanco claro */
+    padding: 10px;
+  }
+  
+  /* Estilo para el encabezado */
+  ion-header {
+    background: #3880ff;  /* Color de fondo de la barra superior */
+  }
+  
+  ion-toolbar {
+    background: #3880ff;  /* Color de fondo de la barra de herramientas */
+  }
+  
+  .app-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;  /* Título negro */
+    text-align: center;
+  }
+  
+  /* Mejorar la apariencia de router-outlet */
+  router-outlet {
+    margin-top: 20px;
+    background-color: #fff;  /* Fondo blanco para las páginas cargadas */
+    border-radius: 10px;  /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
+    padding: 20px;
+  }
+  
+  /* Opcional: Añadir una animación suave al cargar el contenido */
+  ion-content {
+    transition: background-color 0.3s ease;
+  }
+  

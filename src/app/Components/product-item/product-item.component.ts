@@ -1,19 +1,22 @@
 // src/app/Components/product-item/product-item.component.ts
-import { Component, inject, Input } from '@angular/core';
-import { IProduct } from '../../Models/product.=mode';
+import { Component, Input } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { IProduct } from '../../Models/product.mode'; // Asegúrate de que la ruta sea correcta
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-product-item',
-  imports: [],
+  selector: 'app-product-item', 
+  standalone: true,
+  imports: [IonicModule], // Importa IonicModule para usar los componentes de Ionic
   templateUrl: './product-item.component.html',
-  styleUrls: ['./product-item.component.css']
+  styleUrls: ['./product-item.component.css'], // Cambia a .scss si usas SCSS
 })
 export class ProductItemComponent {
-  route = inject(Router);
-  @Input() item!: IProduct;
+  @Input() item!: IProduct; // Tipado del producto con IProduct
+
+  constructor(private router: Router) {}
 
   navigateToID() {
-    this.route.navigate(['products', this.item.id]);
+    this.router.navigate(['products', this.item.id]); // Navega al producto por ID
   }
 }

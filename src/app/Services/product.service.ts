@@ -1,6 +1,6 @@
 // src/app/Services/product.service.ts
 import { Injectable } from '@angular/core';
-import { IProduct } from '../Models/product.=mode';
+import { IProduct } from '../Models/product.mode';
 
 @Injectable({
   providedIn: 'root'

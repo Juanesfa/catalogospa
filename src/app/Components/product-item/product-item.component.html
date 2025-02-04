@@ -1,11 +1,18 @@
-<!-- src/app/Components/product-item/product-item.component.html -->
-<section class="item-product" (click)="navigateToID()">
-    <img [src]="item.image" alt="Imagen de {{item.name}}" class="product-image">
-    <p id="id">ID: {{item.id}}</p>
-    <div class="description">
-        <h2>Nombre: {{item.name}}</h2>
-        <p>Precio: ${{item.price}}</p>
-        <p>Detalles: {{item.details}}</p>
-        <p><i>Más detalles estarán disponibles en el futuro.</i></p>
-    </div>
-</section>
+<ion-card (click)="navigateToID()">
+  <ion-img [src]="item.image" alt="Imagen de {{item.name}}" class="product-image"></ion-img>
+  
+  <ion-card-header>
+    <ion-card-title>{{item.name}}</ion-card-title>
+    <ion-card-subtitle>ID: {{item.id}}</ion-card-subtitle>
+  </ion-card-header>
+  
+  <ion-card-content>
+    <p><strong>Precio:</strong> ${{ item.price }}</p> 
+    <p><strong>Detalles:</strong> {{item.details}}</p>
+    <p><i>Más detalles estarán disponibles en el futuro.</i></p>
+  </ion-card-content>
+
+  <ion-footer>
+    <ion-button expand="full" color="secondary" fill="solid">Ver más detalles</ion-button>
+  </ion-footer>
+</ion-card>

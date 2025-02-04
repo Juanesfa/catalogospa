@@ -1,7 +1,12 @@
 <!-- src/app/Views/not-found/not-found.component.html -->
-<div class="detail-book">
-    <section class="item-book">
-        <h2>404: No se encontró el ID: {{id}}</h2>
-    </section>
-    <button (click)="gotoHome()">Regresar</button>
-</div>
+<ion-content class="detail-book">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>404: No se encontró el ID: {{ id }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button expand="block" (click)="gotoHome()">Regresar</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+  

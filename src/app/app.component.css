@@ -1,19 +1,19 @@
-.app-title {
-    text-align: center; /* Centra el texto */
-    font-size: 3em; /* Tamaño de fuente grande */
-    font-family: 'Arial', sans-serif; /* Fuente */
-    color: #4a4a4a; /* Color del texto */
-    margin-top: 20px; /* Espaciado arriba del título */
-    margin-bottom: 20px; /* Espaciado abajo del título */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para darle un efecto llamativo */
-    background: linear-gradient(135deg, #9beff5, #6bfafa); /* Fondo degradado */
-    padding: 10px; /* Espaciado interno */
-    border-radius: 10px; /* Bordes redondeados */
+/* src/app/app.component.css */
+
+/* Fondo general */
+ion-content {
+  --ion-background-color: #f4f4f4;
+  color: #000;
 }
-app-root {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    height: 100vh; /* Ocupa toda la altura de la ventana */
-    background-color: #f4f4f4; /* Color de fondo general */
+
+/* Encabezado */
+ion-header {
+  --ion-background-color: #3880ff;
+  --ion-text-color: #fff;
+}
+
+ion-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
 }
