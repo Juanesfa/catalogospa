@@ -1,54 +1,37 @@
-/* src/app/views/product-detail/product-detail.component.css */
-.detail-product {
-  display: flex; /* Organiza los elementos */
-  flex-direction: column; /* Alineación vertical */
-  align-items: center; /* Centra horizontalmente */
-  justify-content: center; /* Centra verticalmente */
-  gap: 20px; /* Espaciado entre elementos */
-  padding: 20px;
-  border-radius: 12px; /* Bordes redondeados */
-  background: var(--ion-background-color, #f0f8ff); /* Fondo adaptable al tema */
-  font-family: var(--ion-font-family, 'Verdana', sans-serif);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  max-width: 600px; /* Ancho máximo */
-  margin: auto; /* Centra horizontalmente */
-  height: calc(100vh - 56px); /* Altura completa menos el header */
-}
+/* src/app/Views/product-detail/product-detail.component.css */
 
-.detail-product img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover; /* Mantén las proporciones de la imagen */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-ion-card {
+.product-detail {
+  padding: 16px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.8); /* Fondo translúcido */
+  max-width: 600px;
+  margin: auto;
 }
 
-ion-card-title {
-  font-size: 20px;
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: var(--ion-color-dark, #333); /* Color adaptable */
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-ion-card-content {
-  color: var(--ion-color-medium, #666); /* Color adaptable */
+h2 {
+  margin: 16px 0;
+  font-size: 24px;
+  color: #333;
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
 }
 
 ion-button {
-  --background: linear-gradient(135deg, #4CAF50, #8BC34A); /* Gradiente verde */
-  --background-hover: linear-gradient(135deg, #388E3C, #4CAF50);
-  --border-radius: 8px;
-  --padding-start: 12px;
-  --padding-end: 12px;
-  --padding-top: 10px;
-  --padding-bottom: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  color: var(--ion-color-light);
-  margin-top: 20px;
+  margin-top: 16px;
+  background-color: #3880ff;
+  color: white;
+}
+
+ion-button:hover {
+  background-color: #3171e0;
 }

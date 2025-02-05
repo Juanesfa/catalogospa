@@ -1,73 +1,72 @@
-/* src/app/Views/products-list/products-list.component.css */
-
 /* Estilos para la lista de productos */
-.list-products {
-    display: grid; /* Usamos grid para organizar los productos */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adaptable al tamaño de la pantalla */
-    gap: 20px; /* Espaciado entre productos */
-    padding: 20px; /* Espaciado interno del contenedor */
-    background: var(--ion-background-color, #e6f7ff); /* Fondo adaptable al tema */
-    align-items: center; /* Centra verticalmente los items */
-    justify-items: center; /* Centra horizontalmente la lista */
-    margin: 0 auto; /* Centra la lista en el contenedor */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Espaciado entre productos */
+  padding: 20px; /* Espaciado interno */
+}
+
+/* Estilo para cada producto */
+.product-card {
+  display: flex;
+  flex-direction: column; /* Alinear elementos en columna */
+  justify-content: space-between; /* Espacio entre elementos */
+  height: 100%; /* Asegurarse de que todos los elementos tengan la misma altura */
+  text-align: center; /* Centrar el texto */
+  transition: transform 0.2s; /* Transición suave para el hover */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+/* Estilo para la imagen del producto */
+.product-image {
+  width: 100%; /* Ancho completo */
+  height: auto; /* Mantener la proporción de la imagen */
+  border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+}
+
+/* Estilo para el título de los productos */
+.product-card ion-card-title {
+  font-size: 1.5em; /* Tamaño de fuente para el título del producto */
+  margin: 10px 0; /* Margen superior e inferior */
+}
+
+/* Estilo para el precio de los productos */
+.product-card ion-card-subtitle {
+  font-size: 1.2em; /* Tamaño de fuente para el precio */
+  color: #3880ff; /* Color azul para el precio */
+}
+
+/* Estilo para el botón de agregar al carrito */
+.product-card ion-button {
+  margin-top: auto; /* Empujar el botón hacia abajo */
+  background-color: #28a745; /* Color verde para el botón */
+  color: white; /* Color del texto */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.product-card ion-button:hover {
+  background-color: #218838; /* Color más oscuro al pasar el mouse */
+}
+
+/* Estilos para la barra de búsqueda */
+.search-bar {
+  padding: 20px; /* Espaciado interno */
+  background-color: #f4f4f4; /* Color de fondo suave */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .product-card {
+    height: auto; /* Permitir que la altura se ajuste automáticamente en pantallas pequeñas */
   }
-  
-  /* Estilos para cada item de producto */
-  .product-item {
-    display: flex;
-    flex-direction: column; /* Los elementos del producto se apilan verticalmente */
-    align-items: center; /* Centra los elementos en cada item */
-    justify-content: space-between; /* Distribuye espacio entre los elementos */
-    border: 1px solid var(--ion-color-medium, #ccc); /* Borde adaptado al tema */
-    border-radius: 8px; /* Bordes redondeados */
-    background-color: var(--ion-color-light, #f8f0fc); /* Fondo adaptable */
-    padding: 15px; /* Espaciado interno */
-    transition: transform 0.3s, box-shadow 0.3s; /* Transición para hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra inicial */
-    text-align: center; /* Centra el contenido de cada producto */
-    width: 100%; /* Asegura que ocupe el ancho completo disponible */
+
+  .search-bar {
+    padding: 10px; /* Menos espaciado en pantallas pequeñas */
   }
-  
-  .product-item:hover {
-    transform: translateY(-5px); /* Efecto de elevación en hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa en hover */
-  }
-  
-  /* Mejora de presentación de imágenes */
-  .product-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px; /* Bordes redondeados en las imágenes */
-  }
-  
-  /* Estilo para los textos (nombre y precio) */
-  .product-item h2 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--ion-text-color, #333);
-    margin-top: 10px;
-  }
-  
-  .product-item p {
-    font-size: 1rem;
-    color: var(--ion-text-color, #555);
-    margin-top: 5px;
-  }
-  
-  /* Para asegurar que el ion-list ocupe todo el ancho disponible */
-  ion-list {
-    width: 100%;
-  }
-  
-  /* Estilo para los items en la lista */
-  ion-item {
-    --background: transparent; /* Fondo transparente para los items de la lista */
-    --border-radius: 8px;
-    padding: 0;
-  }
-  
-  /* Fondo del contenido */
-  ion-content {
-    --ion-background-color: var(--ion-color-light, #e6f7ff); /* Fondo del contenido */
-  }
-       
+}

@@ -1,19 +1,25 @@
-<!-- src/app/views/product-detail/product-detail.component.html -->
 <ion-header>
   <ion-toolbar>
-    <ion-title>Detalle del Producto</ion-title>
+    <ion-title>{{ product.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/cart">
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <div class="detail-product">
+<ion-content>
+  <div class="product-detail">
+    <img [src]="product.image" alt="{{ product.name }}" class="product-image" />
     <ion-card>
-      <img [src]="productSelected.image" alt="Imagen de {{productSelected.name}}" class="product-image">
+      <ion-card-header>
+        <ion-card-title>{{ product.name }}</ion-card-title>
+        <ion-card-subtitle>{{ product.price | currency }}</ion-card-subtitle>
+      </ion-card-header>
       <ion-card-content>
-        <ion-card-title>Nombre: {{productSelected.name}}</ion-card-title>
-        <p>Precio: ${{productSelected.price}}</p>
-        <p>Detalles: {{productSelected.details}}</p>
-        <ion-button expand="block" (click)="gotoHome()">Regresar</ion-button>
+        <p>{{ product.details }}</p>
+        <ion-button (click)="addToCart(product)">Agregar al Carrito</ion-button>
       </ion-card-content>
     </ion-card>
   </div>

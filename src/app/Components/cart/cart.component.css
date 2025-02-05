@@ -1,0 +1,128 @@
+/* Estilos para el carrito */
+ion-header {
+    background-color: #3880ff; /* Color de fondo del header */
+    color: white; /* Color del texto */
+  }
+  
+  /* Contenido del carrito */
+  ion-content {
+    padding: 20px; /* Espaciado interno */
+  }
+  
+  /* Estilo para la lista de productos en el carrito */
+  ion-list {
+    margin-top: 20px; /* Espaciado superior */
+  }
+  
+  /* Estilo para los elementos de la lista */
+  ion-item {
+    margin-bottom: 10px; /* Espaciado inferior */
+  }
+  
+  /* Estilo para el botón de eliminar */
+  ion-button {
+    --background: #ff3b30; /* Color de fondo del botón */
+    --color: white; /* Color del texto */
+    --border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave */
+  }
+  
+  /* Efecto hover para el botón de eliminar */
+  ion-button:hover {
+    --background: #c72c2c; /* Color más oscuro al pasar el mouse */
+  }
+  
+  /* Estilo para el contenedor del carrito */
+  .cart-container {
+    background-color: #fff; /* Fondo blanco para el carrito */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  /* Estilo para el título del carrito */
+  .cart-title {
+    font-size: 2em; /* Tamaño de fuente grande */
+    color: #333; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 20px; /* Margen inferior */
+  }
+  
+  /* Estilo para los elementos de la lista en el carrito */
+  .cart-item {
+    display: flex; /* Usar flexbox para alinear elementos */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Centrar verticalmente */
+    padding: 10px 0; /* Espaciado interno */
+    border-bottom: 1px solid #ddd; /* Borde inferior */
+  }
+  
+  /* Estilo para el nombre del producto en el carrito */
+  .cart-item-name {
+    font-size: 1.2em; /* Tamaño de fuente para el nombre del producto */
+  }
+  
+  /* Estilo para el precio del producto en el carrito */
+  .cart-item-price {
+    font-size: 1.2em; /* Tamaño de fuente para el precio */
+    color: #3880ff; /* Color azul para el precio */
+  }
+  
+  /* Estilo para el botón de eliminar en el carrito */
+  .cart-item ion-button {
+    --background: #ff3b30; /* Color de fondo del botón */
+    --color: white; /* Color del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave */
+  }
+  
+  /* Estilo para el total del carrito */
+  .cart-total {
+    font-size: 1.5em; /* Tamaño de fuente para el total */
+    text-align: right; /* Alinear a la derecha */
+    margin-top: 20px; /* Margen superior */
+  }
+  
+  /* Estilo para el botón de finalizar compra */
+  .checkout-button {
+    display: block; /* Mostrar como bloque */
+    margin: 20px auto; /* Centrar el botón */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: #28a745; /* Color verde */
+    color: white; /* Color del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    text-align: center; /* Centrar el texto */
+    transition: background-color 0.3s; /* Transición suave */
+  }
+  
+  .checkout-button:hover {
+    background-color: #218838; /* Color más oscuro al pasar el mouse */
+  }
+  
+  /* Media Queries para Responsividad */
+  @media (max-width: 768px) {
+    .app-title {
+      font-size: 2em; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+  
+    .product-list {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ajustar columnas en pantallas pequeñas */
+    }
+  
+    .cart-container {
+      padding: 15px; /* Ajustar espaciado interno */
+    }
+  
+    .cart-title {
+      font-size: 1.5em; /* Tamaño de fuente más pequeño */
+    }
+  
+    .cart-item {
+      flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+      align-items: flex-start; /* Alinear a la izquierda */
+    }
+  
+    .cart-item-price {
+      margin-top: 5px; /* Margen superior para el precio */
+    }
+  }

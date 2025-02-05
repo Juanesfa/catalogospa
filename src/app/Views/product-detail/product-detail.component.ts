@@ -1,41 +1,53 @@
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:53769302.
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:2296927813.
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:3703691716.
-// src/app/Views/product-detail/product-detail.component.ts
-import { Component, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductService } from '../../Services/product.service';
-import { IProduct } from '../../Models/product.mode';
-import { IonicModule } from '@ionic/angular'; // Importación para componentes Ionic
+import { CartService } from '../../Services/cart.service';
+import { IProduct } from '../../Models/product.mode'; // Asegúrate de que la ruta sea correcta
+import { ProductService } from '../../Services/product.service'; // Asegúrate de que la ruta sea correcta
+import { CommonModule } from '@angular/common'; // Importa CommonModule
+import { IonicModule } from '@ionic/angular'; // Importa IonicModule
 
 @Component({
   selector: 'app-product-detail',
-  imports: [IonicModule], // Importación para componentes Ionic
   standalone: true,
+  imports: [CommonModule, IonicModule], // Asegúrate de incluir ambos módulos aquí
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
-export class ProductDetailComponent {
-  productSelected!: IProduct;
+export class ProductDetailComponent implements OnInit {
+  product!: IProduct; // Usamos el operador de aserción no nula
 
-  private route = inject(Router);
-  private Aroute = inject(ActivatedRoute);
-  private productService = inject(ProductService);
+  constructor(
+    private route: ActivatedRoute,
+    private productService: ProductService,
+    private cartService: CartService,
+    private router: Router // Agregamos el router para la navegación
+  ) {}
 
-  constructor() {
-    this.Aroute.params.subscribe(params => {
-      const id = params['id'];
-      const product = this.productService.getProductById(Number(id));
+  ngOnInit() {
+    const productId = this.route.snapshot.paramMap.get('id'); // productId puede ser string | null
+    if (productId) {
+      const id = Number(productId); // Convertimos a número
+      const foundProduct = this.productService.getProductById(id); // Buscamos el producto
 
-      if (!product) {
-        this.route.navigate(['not-found', id]);
+      if (foundProduct) {
+        this.product = foundProduct; // Asignamos el producto encontrado
       } else {
-        this.productSelected = product;
+        // Manejo de caso en que el producto no se encuentra
+        console.error('Producto no encontrado');
+        this.router.navigate(['/not-found']); // Redirigir a una página de no encontrado
       }
-    });
+    } else {
+      console.error('ID de producto no válido');
+      this.router.navigate(['/not-found']); // Redirigir a una página de no encontrado
+    }
   }
 
-  gotoHome(): void {
-    this.route.navigate(['']);
+  addToCart(product: IProduct) {
+    this.cartService.addToCart(product);
+    alert(`${product.name} ha sido agregado al carrito.`);
+  }
+
+  gotoHome() {
+    this.router.navigate(['/']); // Navega a la página principal
   }
 }

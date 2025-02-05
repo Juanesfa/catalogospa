@@ -1,19 +1,216 @@
-/* src/app/app.component.css */
-
-/* Fondo general */
-ion-content {
-  --ion-background-color: #f4f4f4;
-  color: #000;
+/* Estilos generales para la aplicación */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Color de fondo suave */
+  overflow-x: hidden; /* Evitar el desplazamiento horizontal */
 }
 
-/* Encabezado */
-ion-header {
-  --ion-background-color: #3880ff;
-  --ion-text-color: #fff;
+/* Contenedor principal */
+main {
+  max-width: 1200px; /* Ancho máximo */
+  margin: 0 auto; /* Centrar el contenedor */
+  padding: 20px; /* Espaciado interno */
+  overflow-y: auto; /* Permitir el desplazamiento vertical */
+  height: 100vh; /* Altura completa de la ventana */
 }
 
-ion-title {
+/* Estilo para el título de la aplicación */
+.app-title {
   text-align: center;
-  font-size: 24px;
-  font-weight: bold;
+  color: #333; /* Color del texto */
+  margin: 20px 0;
+  font-size: 2.5em; /* Tamaño de fuente grande */
+  animation: fadeIn 1s ease-in; /* Animación de entrada */
+}
+
+/* Enlace al carrito */
+a {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #3880ff; /* Color de fondo del botón */
+  color: white; /* Color del texto */
+  text-decoration: none; /* Sin subrayado */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Efecto hover para el enlace */
+a:hover {
+  background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Estilos para el router outlet */
+router-outlet {
+  display: block; /* Asegurarse de que el outlet se muestre como bloque */
+  margin-top: 20px; /* Esp aciado superior */
+}
+
+/* Estilos para el footer */
+ion-footer {
+  background-color: #3880ff; /* Color de fondo del footer */
+  color: white; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+  padding: 10px 0; /* Espaciado interno */
+}
+
+/* Estilos para el botón de volver al catálogo */
+.back-button {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0; /* Espaciado superior e inferior */
+}
+
+/* Estilos para los productos */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Espaciado entre productos */
+}
+
+.product-item {
+  background-color: white; /* Fondo blanco para los productos */
+  border: 1px solid #ddd; /* Borde gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 15px; /* Espaciado interno */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.2s; /* Transición suave para el hover */
+}
+
+.product-item:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+/* Estilo para el título de los productos */
+.product-item h2 {
+  font-size: 1.5em; /* Tamaño de fuente para el título del producto */
+  margin: 10px 0; /* Margen superior e inferior */
+}
+
+/* Estilo para el precio de los productos */
+.product-item p {
+  font-size: 1.2em; /* Tamaño de fuente para el precio */
+  color: #3880ff; /* Color azul para el precio */
+}
+
+/* Estilo para el botón de agregar al carrito */
+.product-item ion-button {
+  margin-top: 10px; /* Margen superior para el botón */
+  background-color: #28a745; /* Color verde para el botón */
+  color: white; /* Color del texto */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.product-item ion-button:hover {
+  background-color: #218838; /* Color más oscuro al pasar el mouse */
+}
+
+/* Estilos para el contenedor del carrito */
+.cart-container {
+  background-color: #fff; /* Fondo blanco para el carrito */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  overflow-y: auto; /* Permitir el desplazamiento vertical */
+  max-height: 80vh; /* Altura máxima para el carrito */
+}
+
+/* Estilo para el título del carrito */
+.cart-title {
+  font-size: 2em; /* Tamaño de fuente grande */
+  color: #333; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Estilo para los elementos de la lista en el carrito */
+.cart-item {
+  display: flex; /* Usar flexbox para alinear elementos */
+  justify-content: space-between; /* Espacio entre elementos */
+  align-items: center; /* Centrar verticalmente */
+  padding: 10px 0; /* Espaciado interno */
+  border-bottom: 1px solid #ddd; /* Borde inferior */
+}
+
+/* Estilo para el nombre del producto en el carrito */
+.cart-item-name {
+  font-size: 1.2em; /* Tamaño de fuente para el nombre del producto */
+}
+
+/* Estilo para el precio del producto en el carrito */
+.cart-item-price {
+  font-size: 1.2em; /* Tamaño de fuente para el precio */
+  color: #3880ff; /* Color azul para el precio */
+}
+
+/* Estilo para el botón de eliminar en el carrito */
+.cart-item ion-button {
+  --background: #ff3b30; /* Color de fondo del botón */
+  --color: white; /* Color del texto */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Estilo para el total del carrito */
+.cart-total {
+  font-size: 1.5em; /* Tamaño de fuente para el total */
+  text-align: right; /* Alinear a la derecha */
+  margin-top: 20px; /* Margen superior */
+}
+
+/* Estilo para el botón de finalizar compra */
+.checkout-button {
+ display: block; /* Mostrar como bloque */
+  margin: 20px auto; /* Centrar el botón */
+  padding: 10px 20px; /* Espaciado interno */
+  background-color: #28a745; /* Color verde */
+  color: white; /* Color del texto */
+  border-radius: 5px; /* Bordes redondeados */
+  text-align: center; /* Centrar el texto */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.checkout-button:hover {
+  background-color: #218838; /* Color más oscuro al pasar el mouse */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2em; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+  }
+
+  .product-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ajustar columnas en pantallas pequeñas */
+  }
+
+  .cart-container {
+    padding: 15px; /* Ajustar espaciado interno */
+  }
+
+  .cart-title {
+    font-size: 1.5em; /* Tamaño de fuente más pequeño */
+  }
+
+  .cart-item {
+    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    align-items: flex-start; /* Alinear a la izquierda */
+  }
+
+  .cart-item-price {
+    margin-top: 5px; /* Margen superior para el precio */
+  }
 }
