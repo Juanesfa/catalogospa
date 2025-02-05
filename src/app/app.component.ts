@@ -39,6 +39,6 @@ export class AppComponent {
   }
 
   addToCart(product: IProduct) {
-    this.cartService.addToCart(product); // Llama al método del servicio del carrito
+    this.cartService.addProduct(product); // Llama al método del servicio del carrito
   }
 }

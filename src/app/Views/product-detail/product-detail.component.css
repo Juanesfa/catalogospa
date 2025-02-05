@@ -35,3 +35,9 @@ ion-button {
 ion-button:hover {
   background-color: #3171e0;
 }
+/* src/styles.css */
+@media (max-width: 600px) {
+  .product-item {
+    flex-direction: column; /* Cambia la dirección del flex para móviles */
+  }
+}

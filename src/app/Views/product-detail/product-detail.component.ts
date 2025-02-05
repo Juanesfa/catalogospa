@@ -43,7 +43,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addToCart(product: IProduct) {
-    this.cartService.addToCart(product);
+    this.cartService.addProduct(product);
     alert(`${product.name} ha sido agregado al carrito.`);
   }
 

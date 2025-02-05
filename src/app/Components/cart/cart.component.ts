@@ -19,13 +19,13 @@ export class CartComponent {
   constructor(private cartService: CartService) {}
 
   ngOnInit() {
-    this.items = this.cartService.getItems();
+    this.items = this.cartService.getCart(); // Cambia getItems() a getCart()
     this.total = this.cartService.getTotal();
   }
 
   removeItem(product: IProduct) {
-    this.cartService.removeFromCart(product);
-    this.items = this.cartService.getItems();
+    this.cartService.removeProduct(product.id); // Asegúrate de que el método removeProduct reciba el ID
+    this.items = this.cartService.getCart(); // Cambia getItems() a getCart()
     this.total = this.cartService.getTotal();
   }
 

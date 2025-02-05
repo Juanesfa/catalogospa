@@ -1,23 +1,8 @@
 <!-- src/app/app.component.html -->
-
-
-  <h1 class="app-title">Catálogo de Productos de SPA</h1>
-  <!-- Enlace al carrito usando routerLink -->
-  <a [routerLink]="['/cart']">Ir al Carrito</a>
-  <!-- Aquí se mostrará el contenido de las rutas -->
-  <router-outlet></router-outlet>
-
-
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>{{ title }}</ion-title>
-    <ion-buttons slot="end">
-      <ion-button routerLink="/cart">Carrito</ion-button> 
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <router-outlet></router-outlet>
-</ion-content>
--->
+<nav>
+  <ul>
+    <li><a routerLink="/cart">Cart</a></li>
+    <li><a routerLink="/products">Products</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>

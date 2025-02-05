@@ -1,3 +1,4 @@
+// src/app/Services/cart.service.ts
 import { Injectable } from '@angular/core';
 import { IProduct } from '../Models/product.mode'; // Asegúrate de que la ruta sea correcta
 
@@ -5,37 +6,48 @@ import { IProduct } from '../Models/product.mode'; // Asegúrate de que la ruta 
   providedIn: 'root'
 })
 export class CartService {
-  private items: { product: IProduct; quantity: number }[] = [];
+  private cart: { product: IProduct; quantity: number }[] = [];
 
-  addToCart(product: IProduct) {
-    const existingItem = this.items.find(item => item.product.id === product.id);
-    if (existingItem) {
-      existingItem.quantity++;
+  constructor() {
+    this.loadCart();
+  }
+
+  addProduct(product: IProduct): void {
+    const existingProduct = this.cart.find(item => item.product.id === product.id);
+    if (existingProduct) {
+      existingProduct.quantity += 1; // Incrementa la cantidad si ya existe
     } else {
-      this.items.push({ product, quantity: 1 });
+      this.cart.push({ product, quantity: 1 }); // Inicializa la cantidad
     }
+    this.saveCart();
   }
 
-  removeFromCart(product: IProduct) {
-    const existingItem = this.items.find(item => item.product.id === product.id);
-    if (existingItem) {
-      if (existingItem.quantity > 1) {
-        existingItem.quantity--;
-      } else {
-        this.items = this.items.filter(item => item.product.id !== product.id);
-      }
+  removeProduct(productId: number): void { // Asegúrate de que el tipo sea el correcto
+    this.cart = this.cart.filter(item => item.product.id !== productId); // Cambia item.id a item.product.id
+    this.saveCart();
+  }
+
+  getTotal(): number {
+    return this.cart.reduce((total, item) => total + (item.product.price * item.quantity), 0);
+  }
+
+  clearCart(): void {
+    this.cart = [];
+    this.saveCart();
+  }
+
+  getCart(): { product: IProduct; quantity: number }[] {
+    return this.cart;
+  }
+
+  private saveCart(): void {
+    localStorage.setItem('cart', JSON.stringify(this.cart));
+  }
+
+  private loadCart(): void {
+    const cartData = localStorage.getItem('cart');
+    if (cartData) {
+      this.cart = JSON.parse(cartData);
     }
-  }
-
-  getItems() {
-    return this.items;
-  }
-
-  clearCart() {
-    this.items = [];
-  }
-
-  getTotal() {
-    return this.items.reduce((total, item) => total + item.product.price * item.quantity, 0);
   }
 }
